@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../assets/Logo.png";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -10,13 +11,13 @@ const Header = () => {
       </div>
       <ul className="links-con">
         <li className="link">
-          <a href="/home">Dashboard</a>
+          <Link to="/">Dashboard</Link>
         </li>
         <li className="link">
-          <a href="/home">Search</a>
+          <Link to="/movies">Movies</Link>
         </li>
         <li className="link">
-          <a href="/home">Logout</a>
+          <Link to="/home">Logout</Link>
         </li>
       </ul>
     </nav>
