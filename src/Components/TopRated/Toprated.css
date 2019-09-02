@@ -1,0 +1,10 @@
+.toprated-con {
+  display: flex;
+  overflow: auto;
+  flex: 1;
+}
+
+.box {
+  min-height: min-content;
+  display: flex;
+}

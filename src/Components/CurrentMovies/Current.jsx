@@ -1,12 +1,12 @@
 import React from "react";
 import MovieCard from "../MovieCard/Moviecard";
-import "./Toprated.css";
+import "./Current.css";
 
 const Toprated = props => {
   return (
     <div className="toprated-con">
       <div className="box">
-        {props.toprated.map(movie => {
+        {props.current.map(movie => {
           return <MovieCard key={movie.id} movie={movie} />;
         })}
       </div>

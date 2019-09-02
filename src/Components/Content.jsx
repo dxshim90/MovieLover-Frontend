@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "../Pages/Home";
-import SingleMovie from "../Pages/SIngleMove";
+import SingleMovie from "../Pages/SIngleMovie/SIngleMove";
 import Movies from "../Pages/Movies";
 import SignUP from "../Pages/SignUp/SignupPage";
 import { Switch, Route } from "react-router-dom";

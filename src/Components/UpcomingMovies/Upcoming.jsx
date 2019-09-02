@@ -1,12 +1,12 @@
 import React from "react";
 import MovieCard from "../MovieCard/Moviecard";
-import "./Toprated.css";
+import "./Upcoming.css";
 
-const Toprated = props => {
+const Upcoming = props => {
   return (
     <div className="toprated-con">
       <div className="box">
-        {props.toprated.map(movie => {
+        {props.upcoming.map(movie => {
           return <MovieCard key={movie.id} movie={movie} />;
         })}
       </div>
@@ -14,4 +14,4 @@ const Toprated = props => {
   );
 };
 
-export default Toprated;
+export default Upcoming;
