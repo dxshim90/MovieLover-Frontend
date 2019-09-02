@@ -7,7 +7,9 @@ const Upcoming = props => {
     <div className="toprated-con">
       <div className="box">
         {props.upcoming.map(movie => {
-          return <MovieCard key={movie.id} movie={movie} />;
+          return (
+            <MovieCard addMovie={props.addMovie} key={movie.id} movie={movie} />
+          );
         })}
       </div>
     </div>

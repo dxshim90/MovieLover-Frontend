@@ -5,9 +5,32 @@ import Upcoming from "../Components/UpcomingMovies/Upcoming";
 
 class Movies extends React.Component {
   state = {
+    currentUser: {},
     topRated: [],
     current: [],
     upcoming: []
+  };
+
+  addMovie = async movie => {
+    console.log("hit");
+    const email = localStorage.user;
+    const settings = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email,
+        movie
+      })
+    };
+    try {
+      const request = await fetch("http://localhost:5000/movies/add", settings);
+      const response = await request.json();
+      alert(response);
+    } catch (error) {
+      alert(error);
+    }
   };
 
   async componentDidMount() {
@@ -19,8 +42,22 @@ class Movies extends React.Component {
       "http://localhost:5000/movies/upcoming"
     );
     const responseUpcoming = await requestUpcoming.json();
+    const email = localStorage.user;
+    const settings = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email
+      })
+    };
+
+    const requestUser = await fetch("http://localhost:5000/users", settings);
+    const responseUser = await requestUser.json();
 
     this.setState({
+      currentUser: responseUser,
       topRated: responseToprated,
       current: responseNow,
       upcoming: responseUpcoming
@@ -31,11 +68,23 @@ class Movies extends React.Component {
     return (
       <div>
         <h2>Top Rated Movies Of All Time</h2>
-        <Toprated toprated={this.state.topRated} />
+        <Toprated
+          currentUser={this.state.currentUser}
+          addMovie={this.addMovie}
+          toprated={this.state.topRated}
+        />
         <h2>Movies Currently in Cinemas</h2>
-        <Current current={this.state.current} />
+        <Current
+          currentUser={this.state.currentUser}
+          addMovie={this.addMovie}
+          current={this.state.current}
+        />
         <h2>Movies coming Out Soon</h2>
-        <Upcoming upcoming={this.state.upcoming} />
+        <Upcoming
+          currentUser={this.state.currentUser}
+          addMovie={this.addMovie}
+          upcoming={this.state.upcoming}
+        />
       </div>
     );
   }

@@ -1,11 +1,11 @@
 import React from "react";
-import "./Signup.css";
+import "./LoginForm.css";
+import { Link, Redirect } from "react-router-dom";
 
-class Signup extends React.Component {
+class LoginForm extends React.Component {
   state = {
     email: "",
-    password: "",
-    passwordRepeat: ""
+    password: ""
   };
 
   onChange = e => {
@@ -15,11 +15,8 @@ class Signup extends React.Component {
   };
 
   onSubmit = async e => {
-    const { email, password, passwordRepeat } = this.state;
+    const { email, password } = this.state;
     e.preventDefault();
-    if (password !== passwordRepeat) {
-      return alert("Passwords Do not Match");
-    }
     const settings = {
       method: "POST",
       headers: {
@@ -31,28 +28,30 @@ class Signup extends React.Component {
       })
     };
     try {
-      const request = await fetch(
-        "http://localhost:5000/auth/signup",
-        settings
-      );
+      const request = await fetch("http://localhost:5000/auth/login", settings);
       const response = await request.json();
-      if (response !== `${email} already has an account`) {
-        localStorage.setItem("token", response.token);
-        localStorage.setItem("user", response.user);
-        this.props.props.history.push("/");
-      } else {
-        alert(response);
+      if (response === `No Such account under ${email}`) {
+        return alert(response);
       }
+      if (response === "Incorret email or password") {
+        return alert(response);
+      }
+      localStorage.setItem("token", response.token);
+      localStorage.setItem("user", response.user);
+      this.props.props.history.push("/");
     } catch (error) {
       alert(error);
     }
   };
 
   render() {
+    if (localStorage.token) {
+      return <Redirect to="/" />;
+    }
     return (
       <form onSubmit={this.onSubmit}>
         <div className="container">
-          <h1>Register</h1>
+          <h1>Log In</h1>
           <p>Please fill in this form to create an account.</p>
           <hr />
 
@@ -80,27 +79,16 @@ class Signup extends React.Component {
             value={this.state.password}
           />
 
-          <label htmlFor="password-repeat">
-            <b>Repeat Password</b>
-          </label>
-          <input
-            onChange={this.onChange}
-            type="password"
-            placeholder="Repeat Password"
-            name="passwordRepeat"
-            required
-            value={this.state.passwordRepeat}
-          />
           <hr />
 
           <button type="submit" className="registerbtn">
-            Register
+            Login
           </button>
         </div>
 
         <div className="container signin">
           <p>
-            Already have an account? <a href="#">Sign in</a>.
+            Dont Have An Account <Link to="/signup">Sign up</Link>.
           </p>
         </div>
       </form>
@@ -108,4 +96,4 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default LoginForm;

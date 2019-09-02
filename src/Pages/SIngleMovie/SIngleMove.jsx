@@ -16,8 +16,13 @@ const SingleMovie = props => {
         <h2 className="movie-title">{props.location.data.title}</h2>
         <p className="movie-description">{props.location.data.overview}</p>
         <div className="buttons-con">
-          <button className="btn">Add Movie To Collection</button>
-          <button onClick={() => props.history.push("/movies")} className="btn">
+          <button
+            onClick={() => props.location.addMovie(props.location.data)}
+            className="btn"
+          >
+            Add Movie To Collection
+          </button>
+          <button onClick={() => props.history.push("/")} className="btn">
             Back
           </button>
         </div>

@@ -2,15 +2,12 @@ import React from "react";
 import SignUpForm from "../../Components/Signup/Signup";
 import "./SignupPage.css";
 
-class SignupPage extends React.Component {
-  state = {};
-  render() {
-    return (
-      <div className="signupPage">
-        <SignUpForm />
-      </div>
-    );
-  }
-}
+const SignupPage = props => {
+  return (
+    <div className="signupPage">
+      <SignUpForm props={props} />
+    </div>
+  );
+};
 
 export default SignupPage;

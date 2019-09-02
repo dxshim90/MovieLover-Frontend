@@ -1,0 +1,9 @@
+.footer {
+  background-color: black;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.footer-text {
+  color: white;
+}

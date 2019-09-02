@@ -11,7 +11,13 @@ const MovieCard = props => {
     .join("-");
 
   return (
-    <Link to={{ pathname: `/movies/${props.movie.id}`, data: props.movie }}>
+    <Link
+      to={{
+        pathname: `/movies/${props.movie.id}`,
+        data: props.movie,
+        addMovie: props.addMovie
+      }}
+    >
       <div className="movie_card" id="bright">
         <div className="info_section">
           <div className="movie_header">
