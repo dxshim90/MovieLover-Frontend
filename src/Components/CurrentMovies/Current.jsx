@@ -8,7 +8,13 @@ const Toprated = props => {
       <div className="box">
         {props.current.map(movie => {
           return (
-            <MovieCard addMovie={props.addMovie} key={movie.id} movie={movie} />
+            <MovieCard
+              removeMovie={props.removeMovie}
+              currentUser={props.currentUser}
+              addMovie={props.addMovie}
+              key={movie.id}
+              movie={movie}
+            />
           );
         })}
       </div>

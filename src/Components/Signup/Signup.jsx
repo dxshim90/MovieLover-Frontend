@@ -1,5 +1,6 @@
 import React from "react";
 import "./Signup.css";
+import { Link } from "react-router-dom";
 
 class Signup extends React.Component {
   state = {
@@ -100,7 +101,7 @@ class Signup extends React.Component {
 
         <div className="container signin">
           <p>
-            Already have an account? <a href="#">Sign in</a>.
+            Already have an account? <Link to="/login">Sign in</Link>.
           </p>
         </div>
       </form>

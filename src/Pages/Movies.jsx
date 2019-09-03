@@ -33,6 +33,30 @@ class Movies extends React.Component {
     }
   };
 
+  removeMovie = async movie => {
+    const email = localStorage.user;
+    const settings = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email,
+        movie
+      })
+    };
+    try {
+      const request = await fetch(
+        "http://localhost:5000/movies/remove",
+        settings
+      );
+      const response = await request.json();
+      alert(response);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   async componentDidMount() {
     const requestToprated = await fetch("http://localhost:5000/movies/top");
     const responseToprated = await requestToprated.json();
@@ -69,18 +93,21 @@ class Movies extends React.Component {
       <div>
         <h2>Top Rated Movies Of All Time</h2>
         <Toprated
+          removeMovie={this.removeMovie}
           currentUser={this.state.currentUser}
           addMovie={this.addMovie}
           toprated={this.state.topRated}
         />
         <h2>Movies Currently in Cinemas</h2>
         <Current
+          removeMovie={this.removeMovie}
           currentUser={this.state.currentUser}
           addMovie={this.addMovie}
           current={this.state.current}
         />
         <h2>Movies coming Out Soon</h2>
         <Upcoming
+          removeMovie={this.removeMovie}
           currentUser={this.state.currentUser}
           addMovie={this.addMovie}
           upcoming={this.state.upcoming}

@@ -15,7 +15,9 @@ const MovieCard = props => {
       to={{
         pathname: `/movies/${props.movie.id}`,
         data: props.movie,
-        addMovie: props.addMovie
+        addMovie: props.addMovie,
+        currentUser: props.currentUser,
+        removeMovie: props.removeMovie
       }}
     >
       <div className="movie_card" id="bright">

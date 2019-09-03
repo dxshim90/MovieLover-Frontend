@@ -1,15 +1,7 @@
-.dashboard-con {
+/* .dashboard-con {
   height: 82vh;
-}
+} */
 
 .welcome-message {
-  background-color: blue;
-}
-
-.collection-con {
-  height: 45%;
-}
-
-.recomended {
-  height: 45%;
+  text-transform: uppercase;
 }

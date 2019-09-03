@@ -1,11 +1,21 @@
 import React from "react";
 import "./Footer.css";
+import StickyFooter from "react-sticky-footer";
 
-const Footer = () => {
+const Footer = props => {
   return (
-    <footer className="footer">
-      <p className="footer-text">Created by Daniel Shimield</p>
-    </footer>
+    <StickyFooter
+      stickyStyles={{
+        backgroundColor: "rgba(255,255,255,.8)",
+        padding: "2rem"
+      }}
+    >
+      <div className="footer-con">
+        <footer className="footer">
+          <p className="footer-text">Created by Daniel Shimield</p>
+        </footer>
+      </div>
+    </StickyFooter>
   );
 };
 

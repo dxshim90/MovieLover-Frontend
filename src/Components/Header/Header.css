@@ -22,16 +22,19 @@ nav {
   justify-content: flex-end;
   align-items: center;
   text-decoration: none;
+  color: white;
 }
 
 .link {
   padding: 0px 15px;
 }
-a {
+a,
+li {
   text-decoration: none;
   color: white;
 }
 
+li,
 a:hover {
   color: blue;
 }

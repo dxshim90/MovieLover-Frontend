@@ -21,6 +21,10 @@
   color: white;
 }
 
+.movie-container {
+  height: 100%;
+}
+
 .movie-title {
   font-size: 3rem;
   text-transform: uppercase;

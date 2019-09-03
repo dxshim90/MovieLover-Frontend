@@ -1,7 +1,26 @@
+.footer-con {
+  padding-top: auto;
+}
+
 .footer {
-  background-color: black;
-  height: 100%;
-  flex-shrink: 0;
+  /* background-color: black;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 10%;
+  position: static;
+  left: 0; */
+
+  background-color: #000;
+  color: #ffffff;
+  font-size: 0.8em;
+  margin-top: 25px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  position: ;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-text {
