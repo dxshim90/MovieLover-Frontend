@@ -1,3 +1,17 @@
 .search-con {
-  min-height: 80vh;
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.search-label {
+  font-size: 20px;
+}
+
+.search-input {
+  font-size: 16px;
+  padding-top: 20px;
+  max-width: 50%;
 }

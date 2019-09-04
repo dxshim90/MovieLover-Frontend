@@ -1,5 +1,6 @@
 .container {
   padding: 16px;
+  min-height: 37vh;
 }
 
 input[type="text"],

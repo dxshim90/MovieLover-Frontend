@@ -28,6 +28,7 @@ class Movies extends React.Component {
       const request = await fetch("http://localhost:5000/movies/add", settings);
       const response = await request.json();
       alert(response);
+      this.props.history.push("/");
     } catch (error) {
       alert(error);
     }
@@ -52,6 +53,7 @@ class Movies extends React.Component {
       );
       const response = await request.json();
       alert(response);
+      this.props.history.push("/");
     } catch (error) {
       alert(error);
     }
@@ -90,7 +92,7 @@ class Movies extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{ minHeight: "100vh" }}>
         <h2>Top Rated Movies Of All Time</h2>
         <Toprated
           removeMovie={this.removeMovie}

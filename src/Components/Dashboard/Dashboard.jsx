@@ -2,6 +2,7 @@ import React from "react";
 import "./Dashboard.css";
 import MovieCollection from "../MovieCollection/MovieCollection";
 import SuggestedMovies from "../SuggestedMovies/SuggestedMovies";
+import { withRouter } from "react-router-dom";
 
 class Dashboard extends React.Component {
   state = {
@@ -27,6 +28,7 @@ class Dashboard extends React.Component {
       const request = await fetch("http://localhost:5000/movies/add", settings);
       const response = await request.json();
       alert(response);
+      this.props.history.push("/");
     } catch (error) {
       alert(error);
     }
@@ -51,6 +53,7 @@ class Dashboard extends React.Component {
       );
       const response = await request.json();
       alert(response);
+      this.props.history.push("/");
     } catch (error) {
       alert(error);
     }
@@ -95,9 +98,10 @@ class Dashboard extends React.Component {
       );
       const responseSuggested = await requestSuggested.json();
       this.setState({
-        suggested: responseSuggested.results
+        suggested: responseSuggested
       });
     }
+    console.log(this.state.suggested.length);
   }
 
   render() {
@@ -117,7 +121,16 @@ class Dashboard extends React.Component {
           />
         </div>
         <div className="recomended">
-          <h3 className="recomended-movies">Movies you may like</h3>
+          <h3 className="recomended-movies">
+            {this.state.suggested.length ? (
+              <p>Movies you may like</p>
+            ) : (
+              <p>
+                Cannot Find Recomendations based on current collection, Add some
+                more movies!
+              </p>
+            )}
+          </h3>
           <SuggestedMovies
             SuggestedMovies={this.state.suggested}
             currentUser={this.state.currentUser}
@@ -130,4 +143,4 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard;
+export default withRouter(Dashboard);

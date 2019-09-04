@@ -49,7 +49,7 @@ class LoginForm extends React.Component {
       return <Redirect to="/" />;
     }
     return (
-      <form onSubmit={this.onSubmit}>
+      <form className="login-form" onSubmit={this.onSubmit}>
         <div className="container">
           <h1>Log In</h1>
           <p>Please fill in this form to create an account.</p>

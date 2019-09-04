@@ -14,7 +14,9 @@ class Header extends React.Component {
     return (
       <nav>
         <div className="img-con">
-          <img className="image" src={Logo} alt="" />
+          <Link to="/">
+            <img className="image" src={Logo} alt="" />
+          </Link>
         </div>
         {localStorage.token ? (
           <ul className="links-con">

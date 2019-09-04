@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <Router>
       <Header />
-      <Content />
+      <Content style={{ flex: "1" }} />
       <Footer />
     </Router>
   );

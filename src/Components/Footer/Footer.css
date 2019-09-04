@@ -1,5 +1,4 @@
 .footer-con {
-  padding-top: auto;
 }
 
 .footer {
@@ -14,10 +13,9 @@
   background-color: #000;
   color: #ffffff;
   font-size: 0.8em;
-  margin-top: 25px;
+  height: 100%;
   padding-top: 15px;
   padding-bottom: 10px;
-  position: ;
   left: 0;
   bottom: 0;
   width: 100%;

@@ -1,6 +1,6 @@
-/* .dashboard-con {
-  height: 82vh;
-} */
+.dashboard-con {
+  min-height: 100vh;
+}
 
 .welcome-message {
   text-transform: uppercase;

@@ -44,6 +44,7 @@ class Search extends React.Component {
       const request = await fetch("http://localhost:5000/movies/add", settings);
       const response = await request.json();
       alert(response);
+      this.props.history.push("/");
     } catch (error) {
       alert(error);
     }
@@ -82,7 +83,9 @@ class Search extends React.Component {
     return (
       <div className="search-con">
         <form onSubmit={this.onSubmit}>
+          <label className="search-label">Search For a Movie: </label>
           <input
+            className="search-input"
             type="text"
             onChange={this.onChange}
             placeholder="Search for a movie here"

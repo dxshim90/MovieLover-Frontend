@@ -1,6 +1,5 @@
 nav {
   display: flex;
-  background-color: white;
   width: 100%;
   background-color: black;
 }
@@ -21,20 +20,13 @@ nav {
   width: 60%;
   justify-content: flex-end;
   align-items: center;
-  text-decoration: none;
-  color: white;
 }
 
-.link {
+a {
+  text-decoration: none;
   padding: 0px 15px;
 }
-a,
-li {
-  text-decoration: none;
-  color: white;
-}
 
-li,
 a:hover {
-  color: blue;
+  color: white;
 }
