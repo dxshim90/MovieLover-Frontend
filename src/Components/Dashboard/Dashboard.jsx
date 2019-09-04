@@ -25,7 +25,10 @@ class Dashboard extends React.Component {
       })
     };
     try {
-      const request = await fetch("http://localhost:5000/movies/add", settings);
+      const request = await fetch(
+        "https://movie-lover-backend.herokuapp.com/movies/add",
+        settings
+      );
       const response = await request.json();
       alert(response);
       this.props.history.push("/");
@@ -48,7 +51,7 @@ class Dashboard extends React.Component {
     };
     try {
       const request = await fetch(
-        "http://localhost:5000/movies/remove",
+        "https://movie-lover-backend.herokuapp.com/movies/remove",
         settings
       );
       const response = await request.json();
@@ -71,7 +74,10 @@ class Dashboard extends React.Component {
       })
     };
 
-    const requestUser = await fetch("http://localhost:5000/users", settings);
+    const requestUser = await fetch(
+      "https://movie-lover-backend.herokuapp.com/users",
+      settings
+    );
     const responseUser = await requestUser.json();
     this.setState({
       collection: responseUser.movies,
@@ -93,7 +99,7 @@ class Dashboard extends React.Component {
         })
       };
       const requestSuggested = await fetch(
-        "http://localhost:5000/movies/suggested",
+        "https://movie-lover-backend.herokuapp.com/movies/suggested",
         SuggestedMoviesettings
       );
       const responseSuggested = await requestSuggested.json();

@@ -20,7 +20,10 @@ class Search extends React.Component {
       })
     };
 
-    const requestUser = await fetch("http://localhost:5000/users", settings);
+    const requestUser = await fetch(
+      "https://movie-lover-backend.herokuapp.com/users",
+      settings
+    );
     const responseUser = await requestUser.json();
     this.setState({
       currentUser: responseUser
@@ -41,7 +44,10 @@ class Search extends React.Component {
       })
     };
     try {
-      const request = await fetch("http://localhost:5000/movies/add", settings);
+      const request = await fetch(
+        "https://movie-lover-backend.herokuapp.com/movies/add",
+        settings
+      );
       const response = await request.json();
       alert(response);
       this.props.history.push("/");
@@ -69,7 +75,7 @@ class Search extends React.Component {
       })
     };
     const request = await fetch(
-      "http://localhost:5000/movies/search",
+      "https://movie-lover-backend.herokuapp.com/movies/search",
       settings
     );
     const response = await request.json();

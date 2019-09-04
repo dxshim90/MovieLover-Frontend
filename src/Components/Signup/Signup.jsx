@@ -33,7 +33,7 @@ class Signup extends React.Component {
     };
     try {
       const request = await fetch(
-        "http://localhost:5000/auth/signup",
+        "https://movie-lover-backend.herokuapp.com/auth/signup",
         settings
       );
       const response = await request.json();

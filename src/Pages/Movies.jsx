@@ -25,7 +25,10 @@ class Movies extends React.Component {
       })
     };
     try {
-      const request = await fetch("http://localhost:5000/movies/add", settings);
+      const request = await fetch(
+        "https://movie-lover-backend.herokuapp.com/movies/add",
+        settings
+      );
       const response = await request.json();
       alert(response);
       this.props.history.push("/");
@@ -48,7 +51,7 @@ class Movies extends React.Component {
     };
     try {
       const request = await fetch(
-        "http://localhost:5000/movies/remove",
+        "https://movie-lover-backend.herokuapp.com/movies/remove",
         settings
       );
       const response = await request.json();
@@ -60,12 +63,16 @@ class Movies extends React.Component {
   };
 
   async componentDidMount() {
-    const requestToprated = await fetch("http://localhost:5000/movies/top");
+    const requestToprated = await fetch(
+      "https://movie-lover-backend.herokuapp.com/movies/top"
+    );
     const responseToprated = await requestToprated.json();
-    const requestNow = await fetch("http://localhost:5000/movies/now");
+    const requestNow = await fetch(
+      "https://movie-lover-backend.herokuapp.com/movies/now"
+    );
     const responseNow = await requestNow.json();
     const requestUpcoming = await fetch(
-      "http://localhost:5000/movies/upcoming"
+      "https://movie-lover-backend.herokuapp.com/movies/upcoming"
     );
     const responseUpcoming = await requestUpcoming.json();
     const email = localStorage.user;
@@ -79,7 +86,10 @@ class Movies extends React.Component {
       })
     };
 
-    const requestUser = await fetch("http://localhost:5000/users", settings);
+    const requestUser = await fetch(
+      "https://movie-lover-backend.herokuapp.com/users",
+      settings
+    );
     const responseUser = await requestUser.json();
 
     this.setState({
