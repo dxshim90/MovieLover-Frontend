@@ -19,7 +19,9 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const settings = {
       method: "POST",
+      mode: "no-cors",
       headers: {
+        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({

@@ -3,7 +3,6 @@
   display: flex;
   width: 100%;
   background-size: 100% 100%;
-  padding: 5px;
 }
 
 .single-img-con > img {
@@ -24,6 +23,7 @@
 .movie-title {
   font-size: 3rem;
   text-transform: uppercase;
+  word-wrap: break-word;
 }
 
 .movie-description {
@@ -43,10 +43,11 @@
 .btn {
   height: 50%;
   margin: 20px;
-  width: 40%;
+  width: 40vh;
   background-color: black;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
 }
 
 .btn:hover {

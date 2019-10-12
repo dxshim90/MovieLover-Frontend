@@ -12,6 +12,7 @@ nav {
 .image {
   float: left;
   height: 60px;
+  width: 100%;
 }
 
 .links-con {
