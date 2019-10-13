@@ -23,7 +23,11 @@ const MovieCard = props => {
       <div className="movie_card" id="bright">
         <div className="info_section">
           <div className="movie_header">
-            <img className="locandina" src={posterlink} />
+            <img
+              className="locandina"
+              src={posterlink}
+              alt={props.movie.title}
+            />
             <h1>{props.movie.title}</h1>
 
             <span className="minutes">Release Date: {releaseDate}</span>

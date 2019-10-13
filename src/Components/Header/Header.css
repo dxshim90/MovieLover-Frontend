@@ -31,3 +31,12 @@ a {
 a:hover {
   color: white;
 }
+
+@media (max-width: 1200px) {
+  .nav .module-group {
+    display: none;
+  }
+  .module.mobile-toggle {
+    display: block;
+  }
+}

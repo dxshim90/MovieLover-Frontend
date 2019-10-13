@@ -68,6 +68,7 @@ class Signup extends React.Component {
             name="email"
             required
             value={this.state.email}
+            autoComplete="email"
           />
 
           <label htmlFor="password">
@@ -80,6 +81,7 @@ class Signup extends React.Component {
             name="password"
             required
             value={this.state.password}
+            autoComplete="password"
           />
 
           <label htmlFor="password-repeat">
@@ -90,6 +92,7 @@ class Signup extends React.Component {
             type="password"
             placeholder="Repeat Password"
             name="passwordRepeat"
+            autoComplete="passwordRepeat"
             required
             value={this.state.passwordRepeat}
           />

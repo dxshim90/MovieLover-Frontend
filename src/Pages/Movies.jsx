@@ -12,7 +12,6 @@ class Movies extends React.Component {
   };
 
   addMovie = async movie => {
-    console.log("hit");
     const email = localStorage.user;
     const settings = {
       method: "POST",

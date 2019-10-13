@@ -31,7 +31,6 @@ class Search extends React.Component {
   }
 
   addMovie = async movie => {
-    console.log("hit");
     const email = localStorage.user;
     const settings = {
       method: "POST",
@@ -82,7 +81,6 @@ class Search extends React.Component {
     this.setState({
       searchResult: response
     });
-    console.log(this.state.searchResult);
   };
 
   render() {

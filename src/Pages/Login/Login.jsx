@@ -1,6 +1,5 @@
 import React from "react";
 import LoginForm from "../../Components/Login/LoginForm";
-import { Redirect } from "react-router-dom";
 
 const LoginPage = props => {
   if (localStorage.token) {

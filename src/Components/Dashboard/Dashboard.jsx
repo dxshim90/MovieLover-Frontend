@@ -108,7 +108,6 @@ class Dashboard extends React.Component {
         suggested: responseSuggested
       });
     }
-    console.log(this.state.suggested.length);
   }
 
   render() {

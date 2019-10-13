@@ -70,6 +70,7 @@ class LoginForm extends React.Component {
             name="email"
             required
             value={this.state.email}
+            autoComplete="email"
           />
 
           <label htmlFor="password">
@@ -82,6 +83,7 @@ class LoginForm extends React.Component {
             name="password"
             required
             value={this.state.password}
+            autoComplete="password"
           />
 
           <hr />
