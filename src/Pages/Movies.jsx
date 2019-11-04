@@ -100,6 +100,9 @@ class Movies extends React.Component {
   }
 
   render() {
+    if (!localStorage.token) {
+      this.props.history.push("/");
+    }
     return (
       <div style={{ minHeight: "100vh" }}>
         <h2>Top Rated Movies Of All Time</h2>

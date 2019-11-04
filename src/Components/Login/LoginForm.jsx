@@ -19,9 +19,7 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const settings = {
       method: "POST",
-      mode: "no-cors",
       headers: {
-        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -31,7 +29,7 @@ class LoginForm extends React.Component {
     };
     try {
       const request = await fetch(
-        "https://movie-lover-backend.herokuapp.com/auth/login",
+        "https://movie-lover-backend.herokuapp.com/auth/auth",
         settings
       );
       const response = await request.json();

@@ -2,7 +2,7 @@ import React from "react";
 
 import Logo from "../../assets/Logo.png";
 import "./Header.css";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const logOut = props => {
   localStorage.removeItem("token");
