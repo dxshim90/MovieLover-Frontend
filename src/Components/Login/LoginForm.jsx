@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
     };
     try {
       const request = await fetch(
-        "https://movie-lover-backend.herokuapp.com/auth/auth",
+        "https://movie-lover-backend.herokuapp.com/auth/login",
         settings
       );
       const response = await request.json();
